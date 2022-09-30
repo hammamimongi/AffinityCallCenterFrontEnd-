@@ -1,0 +1,14 @@
+<div>
+<span>Folders</span>
+<ul class="nav-list-mail">
+    <li class="nav-list-item-mail" *ngFor="let item of list ">
+        
+      <button (click)="updateEtatSend(item.path)">
+        <div class="selected"></div>
+        <i class="bi bi-person-circle"></i>
+        <span>{{item.name}}</span>
+      </button>
+    </li>
+
+  </ul>
+</div>

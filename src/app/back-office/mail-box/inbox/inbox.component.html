@@ -1,0 +1,41 @@
+<table class="table ">
+  <thead>
+  <tr>
+
+    <th scope="col">Contact</th>
+    <th scope="col">Mail</th>
+    <th scope="col">Date</th>
+  </tr>
+  <tbody *ngIf="mails.length>0">
+       <tr *ngFor="let mail of mails; let i = index">
+    <td>
+      <button  (click)="updateEtatSend(mail.id)">
+        {{mail.adr}}
+      </button>
+    </td>
+    <td>
+      <span class="object">{{mail.object}} </span>
+      <span class="text">{{mail.text}}</span>
+      <span class="iList">
+        
+      <button (click)="removeMail(mail.id)"><i class="bi bi-trash-fill"></i></button>
+      <button 
+          (click)="EditImportantMail(mail)"  (mouseover)="changeStarStyleType=true" 
+         (mouseout)="changeStarStyleType=false">
+         <i *ngIf="!changeStarStyleType && mail.important==0" class="bi bi-star"></i>
+         <i *ngIf="changeStarStyleType || mail.important==1" class="bi bi-star-fill"></i>
+      </button>
+      </span>
+  </td>
+  <td>{{mail.time}}</td>
+    
+       </tr>
+      
+  </tbody>
+  <div class="col-12" *ngIf="mails.length==0" style="width: 100%;display:flex;flex-direction: column;align-items: center;">
+          
+          <img style="width: 80%;" src="../../../../assets/image/frontOffice/Mail sent-rafiki.svg">
+          <h6>You Don't Have Any New E-mail</h6>
+
+  </div>
+</table>

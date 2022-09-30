@@ -1,0 +1,23 @@
+.nav-list-mail{
+    padding: 0px;
+    .nav-list-item-mail{
+        padding: 5px 0px 5px 0px;
+        border-bottom: 1px solid #dbdbdb;
+        button{
+            .selected{
+                background: #509eff;
+                width: 3px;
+                height: 30px;
+                position: absolute;
+                left: 35px;
+           }
+            text-decoration: none;
+            color: red;
+            i{
+                margin-right: 10px;
+            }
+        }
+        
+    }
+
+}

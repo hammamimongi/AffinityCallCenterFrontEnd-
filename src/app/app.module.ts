@@ -15,6 +15,16 @@ import { ClientsComponent } from './front-office/clients/clients.component';
 import { BackOfficeComponent } from './back-office/back-office.component';
 import { NavbarComponent } from './back-office/navbar/navbar.component';
 import { SidebarComponent } from './back-office/sidebar/sidebar.component';
+import { CardSecurityComponent } from './back-office/card-security/card-security.component';
+import { RolesComponent } from './back-office/roles/roles.component';
+import { MailBoxComponent } from './back-office/mail-box/mail-box.component';
+import { CardComponent } from './back-office/card/card.component';
+import { DashboardComponent } from './back-office/dashboard/dashboard.component';
+import { FolderMailComponent } from './back-office/mail-box/folder-mail/folder-mail.component';
+import { InboxComponent } from './back-office/mail-box/inbox/inbox.component';
+import { SentComponent } from './back-office/mail-box/sent/sent.component';
+import { SendMailComponent } from './back-office/mail-box/send-mail/send-mail.component';
+import { DetailsMailComponent } from './back-office/mail-box/details-mail/details-mail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +39,17 @@ import { SidebarComponent } from './back-office/sidebar/sidebar.component';
     ClientsComponent,
     BackOfficeComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    CardSecurityComponent,
+    RolesComponent,
+    MailBoxComponent,
+    CardComponent,
+    DashboardComponent,
+    FolderMailComponent,
+    InboxComponent,
+    SentComponent,
+    SendMailComponent,
+    DetailsMailComponent
   ],
   imports: [
     BrowserModule,

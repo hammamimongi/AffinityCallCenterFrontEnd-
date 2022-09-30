@@ -28,6 +28,16 @@ main{
         padding:20px 0px 0px 0px ;
     }
 }
-app-roles{
+.folderDiv{
+    background: white;
     padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.mailBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.inbox{
 }

@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BackOfficeComponent } from './back-office/back-office.component';
+import { CardSecurityComponent } from './back-office/card-security/card-security.component';
+import { CardComponent } from './back-office/card/card.component';
+import { DashboardComponent } from './back-office/dashboard/dashboard.component';
+import { MailBoxComponent } from './back-office/mail-box/mail-box.component';
 import { NavbarComponent } from './back-office/navbar/navbar.component';
+import { RolesComponent } from './back-office/roles/roles.component';
 import { SidebarComponent } from './back-office/sidebar/sidebar.component';
 import { ClientsComponent } from './front-office/clients/clients.component';
 import { ContactUsComponent } from './front-office/contact-us/contact-us.component';
@@ -20,6 +25,11 @@ const routes: Routes = [
   { path:"admin" , component:BackOfficeComponent },
   { path:"adminNavbar" , component:NavbarComponent },
   { path:"adminSidebar" , component:SidebarComponent },
+  { path:"cardSecurity" , component:CardSecurityComponent },
+  { path:"roles" , component:RolesComponent },
+  { path:"card" , component:CardComponent },
+  { path:"dashboard" , component:DashboardComponent },
+  { path:"Emails" , component:MailBoxComponent },
 
 ];
 

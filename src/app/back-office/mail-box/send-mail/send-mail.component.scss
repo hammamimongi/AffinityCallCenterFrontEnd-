@@ -1,0 +1,30 @@
+.box{
+    border-top:3px solid #3c8dbc;
+    float: right;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    border-top: 1px solid #dedede;
+    .sendMailForm{
+        padding-top: 20px;
+        .input{
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    }
+}
+    
+h3{
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+}
+.mailbox-btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+    
