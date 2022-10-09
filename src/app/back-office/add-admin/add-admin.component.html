@@ -1,0 +1,28 @@
+<div class="auth-form-light text-left p-5">
+                
+    <h4>New Admin?</h4>
+    <form class="pt-3 forGroupBox" #addAdminForm = "ngForm" (ngSubmit) = "onClickSubmit(addAdminForm.value)" ngModel>
+      
+      <div class="col-6 form-group">
+        <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" ngModel>
+      </div>
+      <div class="col-6 form-group">
+        <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" ngModel> 
+      </div>
+      <div class="col-6 form-group">
+        <select #role (change)="onSelected()"  class="form-control form-control-lg" id="role" ngModel>
+          <option value="1">Admin</option>
+          <option value="2">SuperAdmin</option>
+        </select>
+      </div>
+      <div class="col-6 form-group">
+        <input type="text" class="form-control form-control-lg" name="mobile" placeholder="Phone number" ngModel>
+      </div>
+      <div class="col-12 form-group formGroupBtn">
+        <button class="btn btn-primary" type="reset">Reset</button>
+        <button class="btn btn-primary" type="submit">Save</button>
+
+      </div>
+    
+    </form>
+  </div>

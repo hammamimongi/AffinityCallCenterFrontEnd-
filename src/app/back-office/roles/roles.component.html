@@ -1,33 +1,40 @@
 <div class="container-">
     <div class="row">
+      <div class="col-12 addRole p-3" style="background:white ; border-radius:5px">
+        <div class="BtnAddRole" >
+          <button (click)="addRoleFnct()" class="btn btn-primary">Add Role</button>
+        </div>
+        
+        <app-add-admin *ngIf="addRoleBtn"></app-add-admin>
+      
+      </div>
+
         <div class="col-12 boxTable">
             <table class="table ">
                 <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Mail</th>
+                  <th scope="col">Pseudo</th>
                   <th scope="col">Role</th>
                   <th scope="col">Last Connection</th>
                 </tr>
                 <tbody>
-                <tr>
-                  <th scope="row">1 </th>
-                  <td>
-                    <img [src]="" class="me-2" style="width: 20px">
-                    country.name 
+                <tr *ngFor="let admin of adminData">
+
+                  <th scope="row" *ngIf="!updateAdmin">
+                    
+                    <button>
+                      <i (click)="deleteDataAdmin(admin.id)" class="bi bi-trash"></i>
+                    </button>
+                  </th>                 
+                  <td >
+                    {{admin.email}} 
                   </td>
-                  <td>sdqd</td>
-                  <td>sdqd</td>
-                </tr>
-                <tr>
-                    <th scope="row">1 </th>
-                    <td>
-                      <img [src]="" class="me-2" style="width: 20px">
-                      country.name 
-                    </td>
-                    <td>sdqd</td>
-                    <td>sdqd</td>
-                  </tr>
+                  <td>{{admin.username}} </td>
+                  <td >{{admin.roles[0].name}} </td>
+                  <td> {{admin.lastConn}} </td>
+                   </tr>
                 </tbody>
               </table>
         </div>

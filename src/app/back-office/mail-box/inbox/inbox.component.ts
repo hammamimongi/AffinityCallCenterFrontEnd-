@@ -1,4 +1,6 @@
 import { Component, OnInit,EventEmitter ,Output  } from '@angular/core';
+import { Mails } from 'src/entities/Mails/mails';
+import { MailServiceService } from 'src/services/mail-service.service';
 
 @Component({
   selector: 'app-inbox',
@@ -11,37 +13,35 @@ export class InboxComponent implements OnInit {
   @Output() public DetailMailId = new EventEmitter<any>();
   changeStarStyleType=false
   
-  mails:any[]=[{"id":0,"adr":"hammami@mongi.tn","object":"recrutement stage pfe","text":"yaw mala bi3a  tawa","time":"5min","important":0},
-  {"id":1,"adr":"ikram.jelassi@esprit.tn","object":"demande de  stage pfe","text":"jaw méla ","time":"1h","important":1}
-]
-  constructor() { }
+  mails:Mails[]=[];
+
+  constructor( private boiteMailService : MailServiceService) { }
 
   ngOnInit(): void {
-    console.log(this.mails[0].adr);
+    this.getAllMailApi();
   }
   removeMail(idMail : number){ 
     console.log(idMail);
     this.mails.forEach((value,index)=> { 
-      console.log(value.id);
 
-      if(value.id==idMail)
+      if(value.idMail==idMail)
       this.mails.splice(index,1);
     })  
-    console.log(this.mails);
+    this.deleteMailApi(idMail);
 
   }
 
   EditImportantMail(mail:any){
-    console.log(mail.id+" -"+mail.important+"  "+" before");
     let index = this.mails.indexOf(mail);
-    if(mail.important==0)
-      mail.important=1;
+    if(mail.typeMail=="simpleMail")
+      mail.typeMail="important";
       else
-      mail.important=0
+      mail.typeMail="simpleMail";
 
     this.mails[index]=mail;
-    
-    console.log(mail.id+" -"+mail.important+" after");
+    this.updateEtatMailApi(mail.idMail);
+
+    console.log(mail.idMail+" -"+mail.typeMail+" after");
 
   }
   updateEtatSend(id:number){
@@ -50,4 +50,22 @@ export class InboxComponent implements OnInit {
     this.DetailMail.emit(path);     
     this.DetailMailId.emit(id);     
   }
+
+  updateEtatMailApi(idMail:number){
+    this.boiteMailService.updateEtatMail(idMail).subscribe();
+  }
+  deleteMailApi(idMail:number){
+    this.boiteMailService.deleteMail(idMail).subscribe();
+  }
+  getAllMailApi(){
+
+    this.boiteMailService.getAllMail().subscribe(
+      result=>{
+        this.mails=result.filter(f=>f.typeSendMail=="receive");
+        console.log(this.mails+"- mails data");
+      }
+    )
+    
+  }
+
 }

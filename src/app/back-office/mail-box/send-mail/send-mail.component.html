@@ -2,23 +2,25 @@
     <div class="box-header with-border">
       <h3 class="box-title">Compose New Message</h3>
     </div>
-    <div class="box-body no-padding">
+    <form class="pt-3 forGroupBox" #sendEmailToUser = "ngForm" (ngSubmit) = "onClickSubmit(sendEmailToUser.value)" ngModel>
+      <div class="box-body no-padding">
       <div class="sendMailForm">
-        <input class="form-control" placeholder="To:">
+        <input class="form-control" placeholder="To:" name="adrMail" ngModel>
       </div>
       <div class="sendMailForm">
-        <input class="form-control" placeholder="Subject:">
+        <input class="form-control" placeholder="Subject:" name="objectMail" ngModel>
       </div>
       <div class="sendMailForm">
-        <textarea class="form-control" placeholder="Write your mail" rows="3">
+        <textarea class="form-control" placeholder="Write your mail" name="textMail" rows="3" ngModel>
         </textarea>
       </div>
       <div class="mailbox-btn">
-        <a href="" class="btn btn-primary"><i class="bi bi-trash"></i> Delete</a>
-        <a href="" class="btn btn-primary"><i class="bi bi-send"></i> Replay</a>
+        <button  type="reset" class="btn btn-primary"><i class="bi bi-trash"></i> Delete</button>
+        <button type="submit"  class="btn btn-primary"><i class="bi bi-send"></i> Replay</button>
       </div>
       
-    </div>
+      </div>
+    </form>
     
     
     

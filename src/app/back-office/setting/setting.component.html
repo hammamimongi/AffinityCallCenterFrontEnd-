@@ -1,0 +1,36 @@
+<div class="container-fluid g-0">
+    <app-navbar></app-navbar>
+    <main>
+        <app-sidebar></app-sidebar>
+        <div class="display-area" style="padding: 35px;">
+
+            <div class="auth-form-light text-left p-5">
+                
+                <h4>New Admin?</h4>
+                <form class="pt-3 forGroupBox"  #updateAdminForm = "ngForm" (ngSubmit) = "onClickSubmit(updateAdminForm.value)" ngModel>
+                  <div class="col-6 form-group">
+                    <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" [(ngModel)]="adminDataByUsername.username" #email="ngModel">
+                  </div>
+                  <div class="col-6 form-group">
+                    <input type="email" class="form-control form-control-lg"  name="email" placeholder="Email" [(ngModel)]="adminDataByUsername.email" #email="ngModel">
+                  </div>
+                  <div class="col-6 form-group">
+                    <input type="phone" class="form-control form-control-lg" name="mobile" placeholder="+216 20 000 000" [(ngModel)]="adminDataByUsername.mobile" #email="ngModel">
+                  </div>
+                  <div class="col-6 form-group">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password" [(ngModel)]="adminDataByUsername.password" #email="ngModel">
+                  </div>
+                  <div class="col-12 form-group formGroupBtn">
+                    <button class="btn btn-primary" type="reset">Reset</button>
+                    <button class="btn btn-primary" type="submit">Save</button>
+            
+                  </div>
+                
+                </form>
+              </div>
+
+
+        </div>
+    </main>
+
+</div>

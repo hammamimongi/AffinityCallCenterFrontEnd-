@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit {
       icon:"fa-solid fa-house"
     },
     { 
-      name:"orders",
+      name:"Settings",
       icon:"fa-solid fa-house"
     },
     { 

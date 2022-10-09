@@ -3,5 +3,24 @@
     float: right;    
     background: white;
     border-radius: 10px;
-    
+    color: rgb(40, 40, 40);
+}
+.iList {
+    color: rgb(217, 217, 217);
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    i{
+        margin-right: 10px;
+    }
+}
+.object{
+    font-family: "roboto Medium";;
+}
+.text{
+    font-family: "roboto Regular";
+}
+td button {
+    text-decoration: none;
+    color: rgb(47, 99, 255)
 }

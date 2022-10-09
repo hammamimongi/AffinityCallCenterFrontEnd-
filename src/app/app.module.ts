@@ -25,6 +25,12 @@ import { InboxComponent } from './back-office/mail-box/inbox/inbox.component';
 import { SentComponent } from './back-office/mail-box/sent/sent.component';
 import { SendMailComponent } from './back-office/mail-box/send-mail/send-mail.component';
 import { DetailsMailComponent } from './back-office/mail-box/details-mail/details-mail.component';
+import { AddAdminComponent } from './back-office/add-admin/add-admin.component';
+import { LoginComponent } from './back-office/login/login.component';
+import { GetPasswordComponent } from './back-office/get-password/get-password.component';
+import { SettingComponent } from './back-office/setting/setting.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,13 +55,19 @@ import { DetailsMailComponent } from './back-office/mail-box/details-mail/detail
     InboxComponent,
     SentComponent,
     SendMailComponent,
-    DetailsMailComponent
+    DetailsMailComponent,
+    AddAdminComponent,
+    LoginComponent,
+    GetPasswordComponent,
+    SettingComponent,   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    BrowserAnimationsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule
     
   ],
   providers: [],

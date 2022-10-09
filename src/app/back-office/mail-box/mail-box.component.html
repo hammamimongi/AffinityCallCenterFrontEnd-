@@ -16,7 +16,7 @@
                      </div>
                 </div>
                 <div class="col-12 col-md-9 inbox">
-                     <app-inbox  (DetailMail)="testBtn=$event"  *ngIf="testBtn=='inbox'"></app-inbox>
+                     <app-inbox (DetailMailId)="idMailDetailMail=$event" (DetailMail)="testBtn=$event"  *ngIf="testBtn=='inbox'"></app-inbox>
                      <app-sent *ngIf="testBtn =='sent'"></app-sent>
                      {{idMailDetailMail}}
                      <app-details-mail  *ngIf="testBtn =='detailsMail'"  (sendDetailMails)="idMailDetailMail">
